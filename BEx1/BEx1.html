@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xu li su kien ban phim</title>
+</head>
+<body onload="docReady()">
+    <img src="nobita.png" id="nobita" style="position: absolute; left: 0; top: 0;" height="100" width="80"/>
+    <script>
+        var l =0;
+        var t = 0;
+        function upArrowPressed() {
+            t-=5;
+            document.getElementById("nobita").style.top =  t + 'px';
+        }
+        function downArrowPressed(){
+            t+=5;
+            document.getElementById("nobita").style.top = t + 'px';
+        }
+        function leftArrowPressed() {
+            l-=5;
+            document.getElementById("nobita").style.left =l + 'px';
+        }
+        function rightArrowPressed() {
+            l+=5;
+            document.getElementById("nobita").style.left =l + 'px';
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+        }
+        function docReady()
+        {
+            window.addEventListener('keydown', moveSelection);
+        }
+    </script>
+</body>
+</html>
