@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ghep tranh dong vat</title>
+</head>
+<body>
+    <img id="image1" src="" onclick="myFunction(1)" height="160" width="800"/>
+    <img id="image2" src="" onclick="myFunction(2)" height="160" width="800"/>
+    <img id="image3" src="" onclick="myFunction(3)" height="160" width="800"/>
+    <img id="image4" src="" onclick="myFunction(4)" height="160" width="800"/>
+    <img id="image5" src="" onclick="myFunction(5)" height="160" width="800"/>
+    <script>
+            var imga=new Array();
+            imga[1]= new Array ('funny-cat1_part1x1.jpg',
+                 "monkey_part1x1.jpg","panda_swap_part1x1.jpg");
+            imga[2]= new Array ("funny-cat1_part2x1.jpg",
+                "monkey_part2x1.jpg","panda_swap_part2x1.jpg");
+             imga[3]=  new Array("funny-cat1_part3x1.jpg",
+                 "monkey_part3x1.jpg","panda_swap_part3x1.jpg");
+             imga[4]= new Array ("funny-cat1_part4x1.jpg",
+                 "monkey_part4x1.jpg","panda_swap_part4x1.jpg");
+             imga[5]=  new Array ("funny-cat1_part5x1.jpg",
+                 "monkey_part5x1.jpg","panda_swap_part5x1.jpg");
+            var kt=new Array(0,0,0,0,0);
+            function random() {
+                var m= Math.floor((Math.random() * 3));
+                kt[0]=m;
+                document.images['image1'].src=imga[1][m];
+                var m= Math.floor((Math.random() * 3));
+                kt[1]=m;
+                document.images['image2'].src=imga[2][m];
+                var m= Math.floor((Math.random() * 3));
+                kt[2]=m;
+                document.images['image3'].src=imga[3][m];
+                var m= Math.floor((Math.random() * 3));
+                kt[3]=m;
+                document.images['image4'].src=imga[4][m];
+                var m= Math.floor((Math.random() * 3));
+                kt[4]=m;
+                document.images['image5'].src=imga[5][m];
+            }
+            random();
+            function myFunction(n) {
+                var m= Math.floor((Math.random() * 3));
+                    kt[n-1]=m;
+                    document.images['image' + n].src = imga[n][m];
+                    check();
+            }
+            function check() {
+                if (kt[0]==kt[1]&&kt[1]==kt[2]&&kt[2]==kt[3]&&kt[3]==kt[4]){
+                    alert("Chuc mung, ban da ghep hinh chinh xac!");
+                }
+            }
+    </script>
+
+
+</body>
+</html>
